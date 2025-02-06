@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What is CareerHub?",
+    "answer": "CareerHub is an online job portal designed to bridge the gap between employers and job seekers. It offers a platform where companies can post detailed job listings and candidates can explore a variety of employment opportunities. The platform emphasizes user-friendliness and security, making it easy for both employers and job seekers to navigate, connect, and engage in a seamless recruitment process."
+  },
+  {
+    "question": "How do I post a job?",
+    "answer": "If you're an employer, posting a job on CareerHub is straightforward. First, log in to your account and navigate to the 'Post Job' section. You'll find a form where you can enter all the necessary details about the job, including the job title, description, requirements, and application deadline. Once you have filled in the form, submit it to create a new job listing that will be visible to all potential candidates."
+  },
+  {
+    "question": "How can I search for jobs?",
+    "answer": "Job seekers can easily search for opportunities on CareerHub using the robust search functionality available on the homepage and the dedicated job search page. You can enter specific keywords, choose a preferred location, select job categories, and even apply additional filters to narrow down your search results. This comprehensive search system is designed to help you quickly find jobs that match your skills and career goals."
+  },
+  {
+    "question": "How do I apply for a job?",
+    "answer": "To apply for a job on CareerHub, start by clicking on the job listing that interests you to view all the relevant details. The listing will include important information such as the job description, requirements, and application process. Follow the provided instructions to submit your application, which may involve uploading your resume and other necessary documents. The process is designed to be simple, allowing you to easily apply to multiple opportunities."
+  },
+  {
+    "question": "Can I save jobs to apply later?",
+    "answer": "Yes, CareerHub allows you to save job listings that you are interested in but may want to apply for at a later time. By clicking the 'Save Job' button on any job listing, the opportunity will be added to your personal 'Saved Jobs' section within your profile. This feature makes it easy to keep track of opportunities you are considering, so you can review and apply when you're ready."
+  },
+  {
+    "question": "How do I track my job applications?",
+    "answer": "CareerHub provides a convenient way for job seekers to monitor the progress of their job applications. By accessing the 'My Jobs' section in your profile, you can view the status and updates for each job you have applied to. This section is regularly updated to reflect any changes in the recruitment process, ensuring you stay informed about your application progress and any next steps required."
+  }
+]
