@@ -1,4 +1,4 @@
-import supabaseClient, {exportedSupabaseUrl, exportedSupabaseKey} from "@/utils/supabase";
+import supabaseClient, { supabaseUrl } from "@/utils/supabase";
 
 // - Apply to job ( candidate )
 export async function applyToJob(token, _, jobData) {
@@ -13,7 +13,7 @@ export async function applyToJob(token, _, jobData) {
 
   if (storageError) throw new Error("Error uploading Resume");
 
-  const resume = `${exportedSupabaseUrl}/storage/v1/object/public/resumes/${fileName}`;   // changed from supabaseUrl to exportedSupabaseUrl
+  const resume = `${supabaseUrl}/storage/v1/object/public/resumes/${fileName}`;
 
   const { data, error } = await supabase
     .from("applications")
