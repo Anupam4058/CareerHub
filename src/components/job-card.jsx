@@ -37,11 +37,11 @@ const JobCard = ({
     job_id: job.id,
   });
 
-//   const {
-//     loading: loadingSavedJob,
-//     data: savedJob,
-//     fn: fnSavedJob,
-//   } = useFetch(saveJob);
+  // const {
+  //   loading: loadingSavedJob,
+  //   data: savedJob,
+  //   fn: fnSavedJob,
+  // } = useFetch(saveJob);
 
   const handleSaveJob = async () => {
     await fnSavedJob({
@@ -114,3 +114,166 @@ const JobCard = ({
 };
 
 export default JobCard;
+
+
+
+// Modern design 
+
+// import { Heart, MapPin, Briefcase, Clock, Trash2 } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+// import { useUser } from "@clerk/clerk-react";
+// import useFetch from "@/hooks/use-fetch";
+// import { BarLoader } from "react-spinners";
+
+// const JobCard = ({ job, isMyJob = false, savedInit = false, onJobAction = () => {} }) => {
+//   const { user } = useUser();
+//   const [saved, setSaved] = useState(savedInit);
+
+//   const { fn: fnSavedJob, loading: loadingSavedJob } = useFetch(saveJob, {
+//     alreadySaved: saved,
+//   });
+
+//   const handleSaveJob = async () => {
+//     await fnSavedJob({ user_id: user.id, job_id: job.id });
+//     onJobAction();
+//   };
+
+//   return (
+//     <Card className="card">
+//       <CardHeader className="flex-row items-center justify-between p-4">
+//         <div className="flex items-center gap-2">
+//           {job.company?.logo_url && (
+//             <img src={job.company.logo_url} className="h-8 w-8 rounded-lg" />
+//           )}
+//           <h3 className="text-lg font-semibold text-primary">{job.title}</h3>
+//         </div>
+//         {isMyJob ? (
+//           <Trash2
+//             className="h-5 w-5 cursor-pointer text-red-400 transition hover:text-red-300"
+//             onClick={handleDeleteJob}
+//           />
+//         ) : (
+//           <Button
+//             variant="ghost"
+//             size="icon"
+//             onClick={handleSaveJob}
+//             disabled={loadingSavedJob}
+//           >
+//             <Heart
+//               className={`h-5 w-5 ${saved ? "fill-red-500 stroke-red-500" : "text-secondary"}`}
+//             />
+//           </Button>
+//         )}
+//       </CardHeader>
+
+//       <CardContent className="flex flex-col gap-3 p-4 pt-0">
+//         <div className="flex flex-wrap items-center gap-3 text-sm text-secondary">
+//           <div className="flex items-center gap-1">
+//             <Briefcase className="h-4 w-4" /> {job.company?.name}
+//           </div>
+//           <div className="flex items-center gap-1">
+//             <MapPin className="h-4 w-4" /> {job.location}
+//           </div>
+//           <div className="flex items-center gap-1">
+//             <Clock className="h-4 w-4" />{" "}
+//             {new Date(job.created_at).toLocaleDateString()}
+//           </div>
+//         </div>
+//         <p className="line-clamp-2 text-secondary">{job.description}</p>
+//       </CardContent>
+
+//       <CardFooter className="p-4 pt-0">
+//         <Button className="button-primary w-full" asChild>
+//           <Link to={`/job/${job.id}`}>View Details</Link>
+//         </Button>
+//       </CardFooter>
+//     </Card>
+//   );
+// };
+
+// export default JobCard;
+
+
+// import React, { useState } from "react";
+// import { Heart, MapPin, Briefcase, Clock, Trash2 } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+// import { useUser } from "@clerk/clerk-react";
+// import useFetch from "@/hooks/use-fetch";
+// import { BarLoader } from "react-spinners";
+// import { motion } from "framer-motion";
+
+// const JobCard = ({ job, isMyJob = false, savedInit = false, onJobAction = () => {} }) => {
+//   const { user } = useUser();
+//   const [saved, setSaved] = useState(savedInit);
+
+//   const { fn: fnSavedJob, loading: loadingSavedJob } = useFetch(saveJob, {
+//     alreadySaved: saved,
+//   });
+
+//   const handleSaveJob = async () => {
+//     await fnSavedJob({ user_id: user.id, job_id: job.id });
+//     onJobAction();
+//   };
+
+//   return (
+//     <motion.div
+//       initial={{ opacity: 0, y: 20 }}
+//       whileInView={{ opacity: 0, y: 0 }}
+//       transition={{ duration: 0.5 }}
+//     >
+//       <Card className="card">
+//         <CardHeader className="flex-row items-center justify-between p-4">
+//           <div className="flex items-center gap-2">
+//             {job.company?.logo_url && (
+//               <img src={job.company.logo_url} className="h-8 w-8 rounded-lg" />
+//             )}
+//             <h3 className="text-lg font-semibold text-primary">{job.title}</h3>
+//           </div>
+//           {isMyJob ? (
+//             <Trash2
+//               className="h-5 w-5 cursor-pointer text-red-400 transition hover:text-red-300"
+//               onClick={handleDeleteJob}
+//             />
+//           ) : (
+//             <Button
+//               variant="ghost"
+//               size="icon"
+//               onClick={handleSaveJob}
+//               disabled={loadingSavedJob}
+//             >
+//               <Heart
+//                 className={`h-5 w-5 ${saved ? "fill-red-500 stroke-red-500" : "text-secondary"}`}
+//               />
+//             </Button>
+//           )}
+//         </CardHeader>
+
+//         <CardContent className="flex flex-col gap-3 p-4 pt-0">
+//           <div className="flex flex-wrap items-center gap-3 text-sm text-secondary">
+//             <div className="flex items-center gap-1">
+//               <Briefcase className="h-4 w-4" /> {job.company?.name}
+//             </div>
+//             <div className="flex items-center gap-1">
+//               <MapPin className="h-4 w-4" /> {job.location}
+//             </div>
+//             <div className="flex items-center gap-1">
+//               <Clock className="h-4 w-4" />{" "}
+//               {new Date(job.created_at).toLocaleDateString()}
+//             </div>
+//           </div>
+//           <p className="line-clamp-2 text-secondary">{job.description}</p>
+//         </CardContent>
+
+//         <CardFooter className="p-4 pt-0">
+//           <Button className="button-primary w-full" asChild>
+//             <Link to={`/job/${job.id}`}>View Details</Link>
+//           </Button>
+//         </CardFooter>
+//       </Card>
+//     </motion.div>
+//   );
+// };
+
+// export default JobCard;

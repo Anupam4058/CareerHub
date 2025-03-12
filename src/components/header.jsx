@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import {
-  SignedIn,
-  SignedOut,
-  UserButton,
-  SignIn,
-  useUser,
-} from "@clerk/clerk-react";
-import { Button } from "./ui/button";
-import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
+ import { useEffect, useState } from "react";
+ import { Link, useSearchParams } from "react-router-dom";
+ import {
+   SignedIn,
+   SignedOut,
+   UserButton,
+   SignIn,
+   useUser,
+ } from "@clerk/clerk-react";
+ import { Button } from "./ui/button";
+ import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
 
 const Header = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -31,12 +31,12 @@ const Header = () => {
 
   return (
     <>
-      <nav className="py-4 flex justify-between items-center">
+      <nav className="py-4 px-3 flex justify-between items-center">
         <Link to="/">
-          <img src="/CareerHub logo.png" className="h-20" alt="CareersHub Logo" />
+          <img src="https://cdn.dribbble.com/userupload/23353902/file/original-37730e2fb0f089a6068dd7644f2e4025.png?resize=752x&vertical=center" className="h-10" alt="CareersHub Logo" />
         </Link>
 
-        <div className="flex gap-8">
+        <div className="flex gap-8 rounded-md">
           <SignedOut>
             <Button variant="outline" onClick={() => setShowSignIn(true)}>
               Login
@@ -92,3 +92,4 @@ const Header = () => {
 };
 
 export default Header;
+
