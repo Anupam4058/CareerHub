@@ -5,7 +5,7 @@ import './index.css'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { shadesOfPurple } from '@clerk/themes'
 
-// Import your Publishable Key
+// Import your Publishable Key from 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 if (!PUBLISHABLE_KEY) {
@@ -18,7 +18,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     appearance={{
       baseTheme: shadesOfPurple,
     }}
-    publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    publishableKey={PUBLISHABLE_KEY} 
+    afterSignOutUrl="/"
+    >
+    
       <App />
     </ClerkProvider>
   </React.StrictMode>,
